@@ -112,7 +112,7 @@ ${canonical ? `<meta property="og:url" content="${canonical}">
   <div class="container header-inner">
     <a class="brand" href="${href('index')}" aria-label="${esc(cfg.legalName)} — ${t('home', '首頁')}">
       <img class="brand-mark" src="${asset('logo.svg')}" alt="" width="36" height="36">
-      <span class="brand-text"><span class="brand-name">ART</span><span class="brand-sub">Consulting Ltd</span></span>
+      <span class="brand-text"><span class="brand-name">ART</span><span class="brand-sub">Consulting Limited</span></span>
     </a>
     <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="${t('Menu', '選單')}">${icons.menu}</button>
     <nav class="nav" id="site-nav" aria-label="${t('Main', '主選單')}">
@@ -130,7 +130,7 @@ ${body}
       <div>
         <div class="footer-brand">
           <img class="brand-mark" src="${asset('logo.svg')}" alt="" width="36" height="36">
-          <span class="brand-text"><span class="brand-name">ART</span><span class="brand-sub">Consulting Ltd</span></span>
+          <span class="brand-text"><span class="brand-name">ART</span><span class="brand-sub">Consulting Limited</span></span>
         </div>
         <p>${t(
           'A Hong Kong technology company building mobile apps and helping businesses grow digital products.',
