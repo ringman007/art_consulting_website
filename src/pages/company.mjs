@@ -28,7 +28,7 @@ export default function (c) {
       <tr><th scope="row">${t('Business registration', '商業登記')}</th><td>${t('Registered with the Inland Revenue Department under the Business Registration Ordinance (Cap. 310)', '已根據《商業登記條例》（第310章）向稅務局登記')}</td></tr>
       <tr><th scope="row">D-U-N-S® ${t('Number', '編號')}</th><td>${esc(cfg.duns)}</td></tr>
       <tr><th scope="row">${t('Registered office', '註冊辦事處')}</th><td>${address()}</td></tr>
-      <tr><th scope="row">${t('Telephone', '電話')}</th><td><a href="${phoneHref}">${esc(cfg.phone)}</a></td></tr>
+      ${phoneHref ? `<tr><th scope="row">${t('Telephone', '電話')}</th><td><a href="${phoneHref}">${esc(cfg.phone)}</a></td></tr>` : ''}
       ${mail ? `<tr><th scope="row">${t('Email', '電郵')}</th><td><a href="${mail}">${esc(cfg.email)}</a></td></tr>` : ''}
       <tr><th scope="row">${t('Principal activities', '主要業務')}</th><td>${t(
         'Development and publication of mobile software applications; digital product consulting, market research, data analytics and marketing services',

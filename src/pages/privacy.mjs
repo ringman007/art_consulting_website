@@ -1,7 +1,7 @@
 export default function (c) {
   const { t, cfg, esc, address, phoneHref, mailto, lang } = c;
   const mail = mailto('Privacy request');
-  const contactHtml = `${esc(cfg.legalName)}<br>${address()}<br>${t('Phone', '電話')}: <a href="${phoneHref}">${esc(cfg.phone)}</a>${
+  const contactHtml = `${esc(cfg.legalName)}<br>${address()}${phoneHref ? `<br>${t('Phone', '電話')}: <a href="${phoneHref}">${esc(cfg.phone)}</a>` : ''}${
     mail ? `<br>${t('Email', '電郵')}: <a href="${mail}">${esc(cfg.email)}</a>` : ''
   }`;
 
@@ -13,11 +13,11 @@ export default function (c) {
 <p>${esc(cfg.legalName)} is a company incorporated in Hong Kong (Company No. ${esc(cfg.companyNumber)}) and is responsible for the personal data described in this policy. Our contact details are set out in section 12.</p>
 
 <h2>2. This website</h2>
-<p>This website does not use cookies, advertising trackers or third-party analytics, and it does not ask you to create an account or submit forms.</p>
+<p>This website does not use cookies, advertising trackers or third-party analytics, and it does not ask you to create an account.</p>
 <p>Like all websites, our hosting provider automatically processes technical information such as your IP address, browser type and the pages requested, in order to deliver the site and protect it against abuse. This information is held by the hosting provider for a limited period and is not used by us to identify you.</p>
 
 <h2>3. When you contact us</h2>
-<p>If you email or call us, we receive the information you choose to share, such as your name, email address, phone number and the content of your message. We use it only to respond to you, provide the support or services you asked for, and keep a record of our correspondence.</p>
+<p>If you use our contact form or email us, we receive the information you choose to share, such as your name, email address, company and the content of your message. Contact-form submissions are transmitted securely by our form-processing provider, Web3Forms, and delivered to our company mailbox; they are not used for any other purpose. We use it only to respond to you, provide the support or services you asked for, and keep a record of our correspondence.</p>
 
 <h2>4. Our Apps</h2>
 <p>Our Apps are designed to collect as little personal data as possible. Unless an App's own privacy notice or App Store privacy label states otherwise:</p>
@@ -44,7 +44,7 @@ export default function (c) {
 <p>We will not use your personal data for direct marketing without your consent.</p>
 
 <h2>6. Sharing personal data</h2>
-<p>We do not sell or rent personal data. We share it only with service providers who help us operate our business (such as hosting, email and accounting providers), under obligations of confidentiality; with professional advisers; or where required by law, court order or a competent authority.</p>
+<p>We do not sell or rent personal data. We share it only with service providers who help us operate our business (such as hosting, email, form-processing and accounting providers), under obligations of confidentiality; with professional advisers; or where required by law, court order or a competent authority.</p>
 
 <h2>7. International transfers</h2>
 <p>Some of our service providers may store or process data outside Hong Kong. Where this happens, we take reasonable steps to ensure the data receives a level of protection comparable to that required in Hong Kong.</p>
@@ -77,11 +77,11 @@ export default function (c) {
 <p>${esc(cfg.legalName)} 是一家在香港註冊成立的公司（公司編號 ${esc(cfg.companyNumber)}），負責本政策所述的個人資料。我們的聯絡資料載於第12節。</p>
 
 <h2>2. 本網站</h2>
-<p>本網站不使用 Cookies、廣告追蹤器或第三方分析工具，亦不要求你建立帳戶或提交表格。</p>
+<p>本網站不使用 Cookies、廣告追蹤器或第三方分析工具，亦不要求你建立帳戶。</p>
 <p>與所有網站一樣，我們的網站寄存服務供應商會自動處理技術資料，例如你的 IP 地址、瀏覽器類型及所瀏覽的頁面，以提供網站服務及防止濫用。有關資料由寄存服務供應商保存一段有限時間，我們不會用以識別你的身份。</p>
 
 <h2>3. 當你聯絡我們</h2>
-<p>如你以電郵或電話聯絡我們，我們會收到你選擇提供的資料，例如姓名、電郵地址、電話號碼及訊息內容。我們只會使用這些資料回覆你、提供你所要求的支援或服務，以及保存通訊紀錄。</p>
+<p>如你透過聯絡表格或電郵聯絡我們，我們會收到你選擇提供的資料，例如姓名、電郵地址、公司名稱及訊息內容。聯絡表格的內容經由表格處理服務供應商 Web3Forms 安全傳送至本公司郵箱，不會用作其他用途。我們只會使用這些資料回覆你、提供你所要求的支援或服務，以及保存通訊紀錄。</p>
 
 <h2>4. 我們的應用程式</h2>
 <p>我們的應用程式在設計上盡量減少收集個人資料。除非個別應用程式的私隱聲明或 App Store 私隱標籤另有說明，否則：</p>
@@ -108,7 +108,7 @@ export default function (c) {
 <p>未經你同意，我們不會將你的個人資料用於直接促銷。</p>
 
 <h2>6. 分享個人資料</h2>
-<p>我們不會出售或出租個人資料。我們只會在保密責任下，與協助我們營運業務的服務供應商（例如網站寄存、電郵及會計服務供應商）、專業顧問分享資料，或在法律、法庭命令或主管當局要求下披露。</p>
+<p>我們不會出售或出租個人資料。我們只會在保密責任下，與協助我們營運業務的服務供應商（例如網站寄存、電郵、表格處理及會計服務供應商）、專業顧問分享資料，或在法律、法庭命令或主管當局要求下披露。</p>
 
 <h2>7. 跨境轉移</h2>
 <p>部分服務供應商可能在香港以外地方儲存或處理資料。在此情況下，我們會採取合理措施，確保資料獲得與香港法例要求相若的保障。</p>

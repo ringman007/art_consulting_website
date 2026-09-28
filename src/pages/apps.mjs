@@ -61,7 +61,7 @@ export default function (c) {
     </div>
     <div class="mail-options">
       ${supportMail ? `<a class="mail-option" href="${supportMail}"><div><b>${t('Email support', '電郵支援')}</b><span>${esc(cfg.email)}</span></div>${icons.arrow}</a>` : ''}
-      <a class="mail-option" href="${phoneHref}"><div><b>${t('Call us', '致電我們')}</b><span>${esc(cfg.phone)} · ${t(cfg.hours, '星期一至五 10:00–18:00（香港時間）')}</span></div>${icons.arrow}</a>
+      ${phoneHref ? `<a class="mail-option" href="${phoneHref}"><div><b>${t('Call us', '致電我們')}</b><span>${esc(cfg.phone)} · ${t(cfg.hours, '星期一至五 10:00–18:00（香港時間）')}</span></div>${icons.arrow}</a>` : ''}
       <a class="mail-option" href="${href('privacy')}"><div><b>${t('Privacy Policy', '私隱政策')}</b><span>${t('How our apps handle your data', '我們的應用程式如何處理你的資料')}</span></div>${icons.arrow}</a>
       <a class="mail-option" href="${href('terms')}"><div><b>${t('Terms of Use', '使用條款')}</b><span>${t('The terms that apply to our website and apps', '適用於本網站及應用程式的條款')}</span></div>${icons.arrow}</a>
     </div>

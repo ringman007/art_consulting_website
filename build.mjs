@@ -28,7 +28,7 @@ function makeCtx(lang, page) {
   const t = (en, zh) => (lang === 'zh' ? zh : en);
   const href = (p) => (p === 'index' ? './' : `${p}.html`);
   const asset = (p) => `${prefix}assets/${p}`;
-  const phoneHref = `tel:${cfg.phone.replace(/[^+\d]/g, '')}`;
+  const phoneHref = cfg.phone ? `tel:${cfg.phone.replace(/[^+\d]/g, '')}` : null;
   const mailto = (subject) =>
     cfg.email ? `mailto:${cfg.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}` : null;
   const absUrl = (lng, p) => {
@@ -71,7 +71,7 @@ function layout(ctx, { title, description, body }) {
     ...(cfg.domain ? { url: `https://${cfg.domain}/`, logo: `https://${cfg.domain}/assets/logo.svg` } : {}),
     foundingDate: cfg.incorporated,
     duns: cfg.duns,
-    telephone: cfg.phone,
+    ...(cfg.phone ? { telephone: cfg.phone } : {}),
     ...(cfg.email ? { email: cfg.email } : {}),
     address: {
       '@type': 'PostalAddress',
@@ -158,7 +158,7 @@ ${body}
         <h4>${t('Contact', '聯絡')}</h4>
         <address>
           ${ctx.address()}<br><br>
-          <a href="${phoneHref}">${esc(cfg.phone)}</a>${mail ? `<br><a href="${mail}">${esc(cfg.email)}</a>` : ''}
+          ${[phoneHref && `<a href="${phoneHref}">${esc(cfg.phone)}</a>`, mail && `<a href="${mail}">${esc(cfg.email)}</a>`].filter(Boolean).join('<br>')}
         </address>
       </div>
     </div>
