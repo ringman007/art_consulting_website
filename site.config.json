@@ -1,0 +1,21 @@
+{
+  "domain": null,
+  "email": null,
+  "phone": "+852 9170 8117",
+
+  "legalName": "ART Consulting Limited",
+  "shortName": "ART Consulting",
+  "companyType": "Private company limited by shares",
+  "jurisdiction": "Hong Kong SAR",
+  "companyNumber": "76835251",
+  "incorporated": "2024-07-22",
+  "duns": "989294928",
+  "address": {
+    "line1": "Room 512, 5/F, Office Plus",
+    "line2": "794–802 Nathan Road",
+    "district": "Prince Edward, Kowloon",
+    "region": "Hong Kong",
+    "zh": "香港九龍太子彌敦道794–802號 Office Plus 5樓512室"
+  },
+  "hours": "Mon–Fri, 10:00–18:00 HKT"
+}
